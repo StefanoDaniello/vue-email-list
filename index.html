@@ -21,11 +21,14 @@
     <div id="app">
 
      <div class="containern text-center m-5">
+        <h1>E-mail List</h1>
+        <h3>{{tanks}}</h3>
         <button class="btn btn-primary m-1" @click="getEmail">Get Random E-mail</button>
         <div v-if="email.length < 1">Push the button to get a 10 random E-mail</div>
         <ul>
           <li v-for="(emails,index) in email">{{emails}}</li>
         </ul>
+        <div>{{errore}}</div>
      </div>
       
     </div>

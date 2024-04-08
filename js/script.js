@@ -10,6 +10,8 @@ createApp({
             email: [],
             emailNumber: 10,
             api_path:'https://flynn.boolean.careers/exercises/api/',
+            errore:null,
+            tanks:null,
         }
     },
     methods: {
@@ -23,6 +25,13 @@ createApp({
                if(i === this.emailNumber -1){
                 this.email = [...emailList]
                }
+            })
+            .catch((error)=>{
+                console.log(error)
+                this.errore='spiacenti si e verificato un errore'
+            })
+            .finally(()=>{
+                this.tanks='Grazie per aver generato le tue random e-mail'
             })
         }
         }
