@@ -13,6 +13,15 @@ createApp({
         }
     },
     methods: {
-
+        getEmail(){
+        
+        for(let i=0 ; i<this.emailNumber ; i++){
+            axios.get(this.api_path+ 'random/mail')
+            .then((response)=>{
+              console.log(response.data.response)
+            })
+        }
+         
+        }
     }
 }).mount('#app')
