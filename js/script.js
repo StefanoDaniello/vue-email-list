@@ -14,14 +14,17 @@ createApp({
     },
     methods: {
         getEmail(){
-        
+        const emailList=[]
         for(let i=0 ; i<this.emailNumber ; i++){
             axios.get(this.api_path+ 'random/mail')
             .then((response)=>{
-              console.log(response.data.response)
+              const email = response.data.response
+                emailList.push(email)
+               if(i === this.emailNumber -1){
+                this.email = [...emailList]
+               }
             })
         }
-         
         }
     }
 }).mount('#app')

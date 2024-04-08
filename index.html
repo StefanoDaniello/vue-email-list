@@ -20,10 +20,14 @@
     <title>Document</title>
     <div id="app">
 
-      <ul>
-        <li v-for="(emails,index) in email">{{emeils}}</li>
-      </ul>
-      <button class="btn btn-primary" @click="getEmail">Get Random E-mail</button>
+     <div class="containern text-center m-5">
+        <button class="btn btn-primary m-1" @click="getEmail">Get Random E-mail</button>
+        <div v-if="email.length < 1">Push the button to get a 10 random E-mail</div>
+        <ul>
+          <li v-for="(emails,index) in email">{{emails}}</li>
+        </ul>
+     </div>
+      
     </div>
 </head>
 <body>
